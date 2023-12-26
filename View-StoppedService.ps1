@@ -4,16 +4,20 @@
 # Last modified: 2023/12/25
 # Description: List a computer stopped services
 
-#set target host
-$Computer = Read-host "Enter the hostname: "
+# Set target host
+$Computer = Read-host "Enter the hostname"
 
-# get service
+# Get services information
 $StoppedService =  Get-Service -ComputerName $Computer |
-# select service by startype AND status
-where-object { ($_.StartType -eq "Automatic") -and ($_.status -notlike "*Running*")} |
-# set service reported properties
-select-object Name,StartType,status,MachineName,DisplayName 
+where-object { 
+    ($_.StartType -eq "Automatic") -and ($_.status -notlike "*Running*") } |
+select-object `
+Name,
+StartType,
+status,
+MachineName,
+DisplayName
 
-# write and format output
+# Write result to screen
 Write-Output $StoppedService | 
 Format-Table -AutoSize
