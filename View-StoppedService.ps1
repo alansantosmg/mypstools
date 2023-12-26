@@ -14,7 +14,7 @@ where-object {
 select-object `
 Name,
 StartType,
-status,
+Status,
 MachineName,
 DisplayName
 
