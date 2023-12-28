@@ -4,6 +4,8 @@
 # Last modified: 2023/12/25
 # Description: List a computer stopped services
 
+clear-host
+
 # Set target host from list
 $Computer = get-content -Path .\hosts.txt
 
