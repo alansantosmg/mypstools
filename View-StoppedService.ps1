@@ -28,6 +28,7 @@ DisplayName
 #MachineName,
 #PSComputerName
 
+# Add the hostname
 hostname 
 # Write result to screen
 Write-Output $StoppedService | 
