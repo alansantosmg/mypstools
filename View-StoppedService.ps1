@@ -7,9 +7,12 @@
 # Set target host from list
 $Computer = get-content -Path .\hosts.txt
 
+###################################################################
 # Set target host from prompt
+#
 # $Computer = Read-host "Enter the hostname"
-
+#
+###################################################################
 
 Invoke-Command -Computername $Computer -Scriptblock {
 
@@ -21,9 +24,11 @@ select-object `
 Name,
 StartType,
 Status,
-MachineName,
 DisplayName
+#MachineName,
+#PSComputerName
 
+hostname 
 # Write result to screen
 Write-Output $StoppedService | 
 Format-Table -AutoSize
