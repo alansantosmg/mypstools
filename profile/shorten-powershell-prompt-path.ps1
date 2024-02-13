@@ -1,7 +1,7 @@
 # Get the powershell profile path
 $PROFILE
 
-# Add to the profile path: 
+# Add to the profile and restart your session
 function prompt {
     $p = Split-Path -leaf -path (Get-Location)
     "$p> "

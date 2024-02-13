@@ -9,6 +9,7 @@ clear-host
 # Set target host from list
 $Computer = get-content -Path .\hosts.txt
 
+
 ###################################################################
 # Set target host from prompt
 #
@@ -17,6 +18,7 @@ $Computer = get-content -Path .\hosts.txt
 ###################################################################
 
 Invoke-Command -Computername $Computer -Scriptblock {
+
 
 # Get services information
 $StoppedService =  Get-Service  |
