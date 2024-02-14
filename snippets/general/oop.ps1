@@ -22,3 +22,5 @@ $obj = [PSCustomObject]@{
 
 $obj
 $obj.SubObj."Subname 2"
+
+

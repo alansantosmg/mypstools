@@ -26,4 +26,3 @@ $logs | ForEach-Object {
 }
 Get-WinEvent @splat
 
-$splat.FilterhashTable
