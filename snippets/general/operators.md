@@ -3,6 +3,7 @@
 # Comparison operators
 
 ```Powershell
+-is
 -eq equal
 -ceq equal (case sensitive)
 -lt less than
@@ -15,6 +16,10 @@
 -match
 -notmatch
 -cmatch (case sensitive)
+-contains
+-notcontains
+-in
+-NotIn
 ```
 
 ###  Examples
@@ -51,4 +56,12 @@ Test-Path c:\windows\notepad.exe
 -Not (Test-Path c:\windows\notepad.exe)
 # False
 
+```
+## Math operators 
+
+```powershell
+
+$a=5
+$a+=5
+# $a = 10
 ```
