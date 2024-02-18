@@ -8,9 +8,8 @@ remove-module PowershellGet
 import-module PowershellGet
 get-module
 
-
-import-module Microsoft.PSResourceGet
+install-module microsoft.powershell.PSResourceGet
+import-module Microsoft.powershell.PSResourceGet
 Update-Help Microsoft.PowerShell.PSResourceGet -Force
 help Get-PSResourceGet
-Get-PSResourceGet
-get-command Microsoft.PowerShell.PSResourceGetget
+get-command -module Microsoft.PowerShell.PSResourceGet
