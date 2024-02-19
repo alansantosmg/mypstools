@@ -9,7 +9,7 @@
 # Module Discovery 
 Find-PsResource PSScriptTools # by name
 Find-PSResource PSScript* Select-Object Name, Version, Description  # Wildcards
-Find-PSResource -Tag vpn -Type Module |select-object Name, Version, Description |sort-object -Property PublishDate -Descending# by tags
+Find-PSResource -Tag vpn -Type Module |select-object Name, Version, Description |sort-object -Property PublishDate -Descending # by tags
 Find-PSResource -CommandName Get-AdSumary 
 
 
