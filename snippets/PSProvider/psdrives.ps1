@@ -75,9 +75,23 @@ help_about certificate_provider
 
 # Provider registry
 
+# only works local
 
+get-psdrive -Psprovider Registry
 
+New-PSDrive -Name Windows -PsProvider Registry -root HKlM:\software\Microsoft\windows\
 
+get-item '.\Windows Error Reporting\'
 
+get-item '.\Windows Error Reporting\' |gm
 
+get-item '.\Windows Error Reporting\' |Select-Object * 
+
+get-item '.\Windows Error Reporting\' |Select-Object * -ExpandProperty Property
+
+Get-ChildItem | Where-Object {$_.ValueCount -gt 0} |Select-Object PsChildName, SubkeyCount, ValueCount
+
+Get-ItemProperty '.\Windows Error Reporting\'
+
+# Examples
 
