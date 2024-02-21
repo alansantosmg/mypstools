@@ -95,3 +95,23 @@ Get-ItemProperty '.\Windows Error Reporting\'
 
 # Examples
 
+# Example 1
+cd hklm:
+Get-ChildItem software | more
+cd software\microsoft\windows\currentversion\
+
+# Example 2
+New-PSDrive -name svc -Psprovider Registry -root HKLM:\SYSTEM\CurrentControlSet\Services
+get-item -path .
+get-childitem | sort PsChildName | select PsChildName,ValueCount,SubkeyCount,Property |more
+
+get-ChildItem -path .\bits |select ImagePath,Start,@{Name="Name"; Expression={$_.PsChildName}},ObjectName, Type 
+
+Get-ChildItem | 
+Where-Object {$_.GetValueNames() -contains "ImagePath"} |
+get-itemproperty -name ObjectName,ImagePath,Start,Type,PSChildname -ErrorAction SilentlyContinue|
+select-object -first 10 @{Name="name";Expression={$_.PsChildName}},ImagePath,Start,ObjectName,Type
+
+Get-ItemPropertyValue -path '.\winrm' -name RequiredPrivileges
+get-itemproperty HKCU:\software\Microsoft\Windows\CurrentVersion\run |select * -excludeproperty PS* | format-list 
+get-itemproperty HKCU:\software\Microsoft\Windows\CurrentVersion\run -Name OneDrive
