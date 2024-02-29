@@ -5,6 +5,7 @@
 ```Powershell
 -is
 -eq equal
+-ne not equal
 -ceq equal (case sensitive)
 -lt less than
 -le less or igual
